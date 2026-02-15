@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detailed Attendance History | Opseek</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-shadow {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111111] antialiased">
+<!-- Mobile Container (Simulating iPhone dimensions) -->
+<div class="max-w-md mx-auto bg-background-light dark:bg-background-dark min-h-screen relative flex flex-col">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-primary/10">
+<div class="flex items-center justify-between px-4 py-4">
+<button class="w-10 h-10 flex items-center justify-start text-primary">
+<span class="material-icons">arrow_back_ios</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-[#111111] dark:text-white uppercase">Attendance History</h1>
+<button class="w-10 h-10 flex items-center justify-end text-primary">
+<span class="material-icons">download</span>
+</button>
+</div>
+<!-- Date Filter Bar -->
+<div class="px-4 pb-4 overflow-x-auto hide-scrollbar">
+<div class="flex space-x-2">
+<button class="flex-none px-5 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-md">
+                        7 Days
+                    </button>
+<button class="flex-none px-5 py-2 rounded-full bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 text-sm font-medium border border-zinc-200 dark:border-zinc-700">
+                        20 Days
+                    </button>
+<button class="flex-none px-4 py-2 rounded-full bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 text-sm font-medium border border-zinc-200 dark:border-zinc-700 flex items-center gap-2">
+<span class="material-icons text-primary text-lg leading-none">calendar_month</span>
+<span>Custom Range</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Attendance Stats Summary (Optional context helper) -->
+<div class="px-4 py-4 grid grid-cols-3 gap-2">
+<div class="bg-white dark:bg-zinc-900 p-3 rounded-xl ios-shadow border border-zinc-100 dark:border-zinc-800 text-center">
+<p class="text-[10px] text-zinc-500 uppercase font-bold mb-1">Present</p>
+<p class="text-xl font-bold text-green-600">05</p>
+</div>
+<div class="bg-white dark:bg-zinc-900 p-3 rounded-xl ios-shadow border border-zinc-100 dark:border-zinc-800 text-center">
+<p class="text-[10px] text-zinc-500 uppercase font-bold mb-1">Absent</p>
+<p class="text-xl font-bold text-primary">01</p>
+</div>
+<div class="bg-white dark:bg-zinc-900 p-3 rounded-xl ios-shadow border border-zinc-100 dark:border-zinc-800 text-center">
+<p class="text-[10px] text-zinc-500 uppercase font-bold mb-1">Partial</p>
+<p class="text-xl font-bold text-orange-500">01</p>
+</div>
+</div>
+<!-- Attendance List -->
+<main class="flex-1 px-4 space-y-3 pb-24">
+<!-- Day Card: Present -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl p-4 ios-shadow border border-zinc-100 dark:border-zinc-800 relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-bold text-[#111111] dark:text-white">Monday, Oct 24, 2023</p>
+<p class="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium tracking-wide">Work from Office • Head Office</p>
+</div>
+<span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold rounded-full uppercase tracking-wider">Present</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-icons text-primary text-base">login</span>
+</div>
+<div>
+<p class="text-[10px] text-zinc-400 uppercase font-bold">In Time</p>
+<p class="text-sm font-semibold text-zinc-700 dark:text-zinc-200">09:00 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-icons text-zinc-400 text-base">logout</span>
+</div>
+<div>
+<p class="text-[10px] text-zinc-400 uppercase font-bold">Out Time</p>
+<p class="text-sm font-semibold text-zinc-700 dark:text-zinc-200">06:05 PM</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Day Card: Partial -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl p-4 ios-shadow border border-zinc-100 dark:border-zinc-800 relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-bold text-[#111111] dark:text-white">Tuesday, Oct 25, 2023</p>
+<p class="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium tracking-wide">Shift: Morning</p>
+</div>
+<span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 text-[10px] font-bold rounded-full uppercase tracking-wider">Partial</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-icons text-primary text-base">login</span>
+</div>
+<div>
+<p class="text-[10px] text-zinc-400 uppercase font-bold">In Time</p>
+<p class="text-sm font-semibold text-zinc-700 dark:text-zinc-200">09:15 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-icons text-zinc-400 text-base">logout</span>
+</div>
+<div>
+<p class="text-[10px] text-zinc-400 uppercase font-bold">Out Time</p>
+<p class="text-sm font-semibold text-zinc-700 dark:text-zinc-200">01:30 PM</p>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-zinc-50 dark:border-zinc-800/50">
+<p class="text-[10px] text-primary italic">Shortage of 3h 45m from required 8h.</p>
+</div>
+</div>
+<!-- Day Card: Absent -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl p-4 ios-shadow border border-zinc-100 dark:border-zinc-800 relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-bold text-[#111111] dark:text-white">Wednesday, Oct 26, 2023</p>
+<p class="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium tracking-wide">Casual Leave Requested</p>
+</div>
+<span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-primary text-[10px] font-bold rounded-full uppercase tracking-wider">Absent</span>
+</div>
+<div class="flex items-center justify-center py-4 bg-zinc-50/50 dark:bg-zinc-800/30 rounded-lg">
+<p class="text-xs text-zinc-400 font-medium">No check-in data recorded for this day.</p>
+</div>
+</div>
+<!-- Day Card: Present -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl p-4 ios-shadow border border-zinc-100 dark:border-zinc-800 relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-bold text-[#111111] dark:text-white">Thursday, Oct 27, 2023</p>
+<p class="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium tracking-wide">Work from Office • Head Office</p>
+</div>
+<span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold rounded-full uppercase tracking-wider">Present</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-icons text-primary text-base">login</span>
+</div>
+<div>
+<p class="text-[10px] text-zinc-400 uppercase font-bold">In Time</p>
+<p class="text-sm font-semibold text-zinc-700 dark:text-zinc-200">08:55 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-icons text-zinc-400 text-base">logout</span>
+</div>
+<div>
+<p class="text-[10px] text-zinc-400 uppercase font-bold">Out Time</p>
+<p class="text-sm font-semibold text-zinc-700 dark:text-zinc-200">06:15 PM</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Day Card: Present -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl p-4 ios-shadow border border-zinc-100 dark:border-zinc-800 relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-bold text-[#111111] dark:text-white">Friday, Oct 28, 2023</p>
+<p class="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium tracking-wide">On-Site Client Meeting</p>
+</div>
+<span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold rounded-full uppercase tracking-wider">Present</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-icons text-primary text-base">login</span>
+</div>
+<div>
+<p class="text-[10px] text-zinc-400 uppercase font-bold">In Time</p>
+<p class="text-sm font-semibold text-zinc-700 dark:text-zinc-200">10:00 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-icons text-zinc-400 text-base">logout</span>
+</div>
+<div>
+<p class="text-[10px] text-zinc-400 uppercase font-bold">Out Time</p>
+<p class="text-sm font-semibold text-zinc-700 dark:text-zinc-200">07:30 PM</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Action Button (New Entry or Apply Leave) -->
+<div class="fixed bottom-6 right-6 z-30">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-icons text-3xl">add</span>
+</button>
+</div>
+<!-- Tab Bar Simulation (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border-t border-zinc-200 dark:border-zinc-800 flex justify-around items-center px-4 py-3 pb-8 z-20">
+<div class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-icons">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons">fact_check</span>
+<span class="text-[10px] font-bold">Attendance</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-icons">description</span>
+<span class="text-[10px] font-medium">Leaves</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-icons">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</div>
+</nav>
+</div>
+</body></html>

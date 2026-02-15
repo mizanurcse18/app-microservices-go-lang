@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Employee Directory - Opseek ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom scrollbar for subtle look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col items-center">
+<!-- Mobile Screen Wrapper (iOS Style) -->
+<div class="w-full max-w-[430px] min-h-screen bg-white dark:bg-zinc-950 flex flex-col relative overflow-hidden shadow-2xl">
+<!-- Status Bar Area (iOS Style) -->
+<div class="h-12 px-8 flex justify-between items-end pb-2 bg-white dark:bg-zinc-950 sticky top-0 z-50">
+<span class="text-sm font-bold">9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-icons text-xs">signal_cellular_alt</span>
+<span class="material-icons text-xs">wifi</span>
+<span class="material-icons text-sm">battery_full</span>
+</div>
+</div>
+<!-- Header -->
+<header class="px-5 pt-2 pb-4 bg-white dark:bg-zinc-950 border-b border-zinc-100 dark:border-zinc-800 sticky top-12 z-40">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<button class="p-1 -ml-1">
+<span class="material-icons text-zinc-900 dark:text-zinc-100">arrow_back_ios</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight">Employee Directory</h1>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="User profile avatar of current user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwStTmAOixKZCPv8NuFdipq8z2-7jDseWRsYJCJmit3q6TrelzWYTs4EwMSAZ-OhCglllhStGt_q2s58rP3sL52vHwFGL4dNwfY1gtD-k_InCTBvHCheHFilrPm1aeFJu-3WZ4XEmXBqVhFs112CSRRTUr7H0EWT5dPxQzm-dKAWestcGtpxUKaV2jOCmWxng-r51puHMcY30TmaGiFVCiHkvxL9DVbSapE21GJT21N0KUo0_IVdiEczWcVifhvLmBwxKTugbB5d0"/>
+</div>
+</div>
+<!-- Search and Filter Bar -->
+<div class="flex gap-2">
+<div class="relative flex-1">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 text-lg">search</span>
+<input class="w-full bg-zinc-100 dark:bg-zinc-900 border-none rounded-xl py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/50 placeholder:text-zinc-400 transition-all" placeholder="Search employees..." type="text"/>
+</div>
+<button class="w-11 h-11 bg-primary/10 text-primary rounded-xl flex items-center justify-center hover:bg-primary/20 transition-colors">
+<span class="material-icons">tune</span>
+</button>
+</div>
+</header>
+<!-- Directory List -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-24">
+<!-- Category Header (Optional but clean) -->
+<div class="px-5 py-3 bg-zinc-50 dark:bg-zinc-900/50">
+<span class="text-xs font-bold uppercase tracking-widest text-zinc-400">All Employees • 42 Total</span>
+</div>
+<!-- List Items -->
+<div class="divide-y divide-zinc-100 dark:divide-zinc-800">
+<!-- Employee Card 1 -->
+<div class="px-5 py-4 flex items-center gap-4 bg-white dark:bg-zinc-950 active:bg-zinc-50 dark:active:bg-zinc-900 transition-colors">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover border border-zinc-100 dark:border-zinc-800" data-alt="Profile photo of Jonathan Smith" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDimIKeiHtudCmj-SsON_lTK6KpoiHUzTBTeuVbBTOMNjbAmTVCYMpiDcUxDsCMhJylHBDwuLUgUW32CaQhNWgsflQljLnkCLQcJNJDUurZfK-cBcD3SF_y78c5O0fOve5Y7O8BkcC3zmx_rN7y4NjtpMeyWyE1XM62kdQAAo2Bj5AfzgysEfD9cG0_gdrR_rJxd-K3B_zGLh2MFgnmURj8P_OescPPIaIHi15x59-POrytCXPYR7YvW2oomOKF3pkJ3c8_J-fGPCM"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white dark:border-zinc-950 rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-black dark:text-white truncate">Jonathan Smith</h3>
+<p class="text-sm text-zinc-600 dark:text-zinc-400">Senior Developer</p>
+<p class="text-xs text-zinc-400 dark:text-zinc-500">Engineering Department</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary transition-all hover:text-white">
+<span class="material-icons text-lg">phone</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 2 -->
+<div class="px-5 py-4 flex items-center gap-4 bg-white dark:bg-zinc-950 active:bg-zinc-50 dark:active:bg-zinc-900 transition-colors">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover border border-zinc-100 dark:border-zinc-800" data-alt="Profile photo of Sarah Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVtasIHOeRv0C-zu_4MuJe_Ywz_ThPOFKmlAQ8XXvKRMRjAWTdDWI6xbLkFdMPIpBrxnhLoZsWTfywdaUcEAxvylQ5jFZz2N5dOsVE0BxytNJ5Vo00ZNXcoNZc0vPyXYv26OIr73g-DSmcwvdDHmz_aUI2NuMuqx4uHFdbWdwmTrpJTjWZdjyo2RrIMOowxPdnqvBoOXX7v0z7fOt8e1CeDyU7Nsljjj_Zq3y09tQZZf2_SYRRvz8h_UTaafdMsB4c7-Nlrls4P5Y"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white dark:border-zinc-950 rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-black dark:text-white truncate">Sarah Chen</h3>
+<p class="text-sm text-zinc-600 dark:text-zinc-400">UX Design Lead</p>
+<p class="text-xs text-zinc-400 dark:text-zinc-500">Product Team</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary transition-all hover:text-white">
+<span class="material-icons text-lg">chat_bubble</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 3 -->
+<div class="px-5 py-4 flex items-center gap-4 bg-white dark:bg-zinc-950 active:bg-zinc-50 dark:active:bg-zinc-900 transition-colors">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover border border-zinc-100 dark:border-zinc-800" data-alt="Profile photo of Marcus Rodriguez" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB6ZF2buWUZfyOOlo9d2vdL_BtXfcSGsHh2l8W6MJvdWmpKbuowa5lAMAuICYxVDBynUIOB2IoX8iXE9dTGFyQRiqtKaGOBdLBQqN07d1NUb2BxxPQI2drAg4LEqskl8TN9YEs3pGTmcTD0vMrnPi1DC-Wi8Pp7VAa3nnVWFTezexSIN3O-dLczo07OruVDX6xsr2-EBAHF1cmCl6M4vc_zsjbt06NcYXIff85FAPAzlvadmdGJYjLvFqtMt-rYjuOYre2gwh5-xg"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-zinc-300 border-2 border-white dark:border-zinc-950 rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-black dark:text-white truncate">Marcus Rodriguez</h3>
+<p class="text-sm text-zinc-600 dark:text-zinc-400">HR Manager</p>
+<p class="text-xs text-zinc-400 dark:text-zinc-500">People Operations</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary transition-all hover:text-white">
+<span class="material-icons text-lg">phone</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 4 -->
+<div class="px-5 py-4 flex items-center gap-4 bg-white dark:bg-zinc-950 active:bg-zinc-50 dark:active:bg-zinc-900 transition-colors">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover border border-zinc-100 dark:border-zinc-800" data-alt="Profile photo of Emily Watson" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6WmMFxaCc90OSAcHYcMRGInivYaeyNPQ_QEICYfPRNQprWcKGpeIReCKNoDRkMNaa591gpx2pHYtVXU3XaKvuiQGxYLfI6ZC7vMAcrOAjBcUzphjGZAbbrLclKS0wSZDIJe-3Tbk6GM9hFpQTg6pFFRpWe5BBsdSCHUYm9pYKTQnkebpO8ieONPOSRKVW4oRLFHh_3r4eU-EMIjc3N3FEUTcDt-fkT3Km1jxjjkrWriRHnxqnfctCa6GERjKEz5OnBiDwuZBnX6I"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white dark:border-zinc-950 rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-black dark:text-white truncate">Emily Watson</h3>
+<p class="text-sm text-zinc-600 dark:text-zinc-400">Finance Controller</p>
+<p class="text-xs text-zinc-400 dark:text-zinc-500">Accounting</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary transition-all hover:text-white">
+<span class="material-icons text-lg">mail</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 5 -->
+<div class="px-5 py-4 flex items-center gap-4 bg-white dark:bg-zinc-950 active:bg-zinc-50 dark:active:bg-zinc-900 transition-colors">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover border border-zinc-100 dark:border-zinc-800" data-alt="Profile photo of David Park" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaSxHxJdTcbb4HHwbwWd5rRqx_ZJt8PcxTgPk0yvVH81O0cUR0rnMovTaop_bUS55MM_l886_aTDJyXa7GZEtkL8PknduNWxfBP4HhwfEaaTkKxMxAKUmd2eD99PaE4fv9OVTdECqrXFXVEkQ5L4Jq7HRLczWftFitjQqPo2EBWhVHdSwkrOrCuyWmFMe5QGz4i4vOFihdOrGJXV8RQ5HfIBy10VwWaWcnQaCIdF-FFZ7_YzXVjpeuGgfcK-wL5ceYhpn63KsuRMw"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-orange-500 border-2 border-white dark:border-zinc-950 rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-black dark:text-white truncate">David Park</h3>
+<p class="text-sm text-zinc-600 dark:text-zinc-400">DevOps Engineer</p>
+<p class="text-xs text-zinc-400 dark:text-zinc-500">Infrastructure</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary transition-all hover:text-white">
+<span class="material-icons text-lg">phone</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 6 -->
+<div class="px-5 py-4 flex items-center gap-4 bg-white dark:bg-zinc-950 active:bg-zinc-50 dark:active:bg-zinc-900 transition-colors">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover border border-zinc-100 dark:border-zinc-800" data-alt="Profile photo of Elena Gilbert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPW7svbZnvi-YABEKsoz80t4e_n8sLnUjqjj0Od6AZJs8n35JWHwh_tX1cjvJwBTw4QMa-CJQsgDUJV5XohWSxoOjOWYs3QgpJTJISnmITx89Dq4jQF-icQMxnecf7kegeMaexaN4UqbsGCa0o2gdl-VWHipVjjdIzgWYYV2pYTA48t7J7CrW70hyc-pZP6a6PbkrQkdj1dEeNuuTgQvtQFoN22v3dRgycQGih2hzZhZ6gpqcta0Ox7EC_m8117B3ip8CMkkHZ0sM"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white dark:border-zinc-950 rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-black dark:text-white truncate">Elena Gilbert</h3>
+<p class="text-sm text-zinc-600 dark:text-zinc-400">Project Manager</p>
+<p class="text-xs text-zinc-400 dark:text-zinc-500">Client Relations</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary transition-all hover:text-white">
+<span class="material-icons text-lg">chat_bubble</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Spacing -->
+<div class="p-8 text-center">
+<p class="text-xs text-zinc-400">End of directory</p>
+</div>
+</main>
+<!-- Bottom Tab Bar (iOS Style) -->
+<nav class="absolute bottom-0 left-0 right-0 h-20 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-lg border-t border-zinc-100 dark:border-zinc-800 px-6 flex justify-between items-start pt-3 pb-8 z-50">
+<button class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-icons text-2xl">dashboard</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons text-2xl">people</span>
+<span class="text-[10px] font-bold">Directory</span>
+</button>
+<div class="relative -top-6">
+<button class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/30 active:scale-95 transition-transform">
+<span class="material-icons text-3xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-icons text-2xl">notifications</span>
+<span class="text-[10px] font-medium">Alerts</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-icons text-2xl">settings</span>
+<span class="text-[10px] font-medium">More</span>
+</button>
+</nav>
+<!-- iPhone Home Indicator -->
+<div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-zinc-300 dark:bg-zinc-700 rounded-full z-[60]"></div>
+</div>
+</body></html>

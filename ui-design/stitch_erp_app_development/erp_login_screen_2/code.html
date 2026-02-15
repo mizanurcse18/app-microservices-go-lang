@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>opseek - ERP Mobile Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E60000",
+                        "secondary": "#1A1A1A",
+                        "background-light": "#f8f9fa",
+                        "background-dark": "#121212",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #E60000;
+            --secondary-color: #1A1A1A;
+        }
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-status-bar {
+            height: env(safe-area-inset-top, 44px);
+        }
+        .ios-bottom-indicator {
+            height: env(safe-area-inset-bottom, 34px);
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-secondary dark:text-slate-100 min-h-screen flex flex-col font-display">
+<div class="ios-status-bar w-full"></div>
+<main class="flex-grow flex flex-col px-8 pt-12 pb-6 max-w-md mx-auto w-full">
+<div class="flex justify-center mb-16">
+<div class="flex flex-col items-center">
+<img alt="opseek logo" class="h-16 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASQn-DYrE7to49Wb8vUrz1WuDAG01bQlWnD_pqZEsHJKn23xAoqoB-zm-V2XtqiQZ5fdRBXUvgIi3jFNLT1igTSdjMJ5RgPjug9zWhX27IYD35l5dpNLEcbyEu9R2W1TztueiVm_B_R1CIb4gDO3FWz8RsnldEggzkjNKP5EDHibl0w27ua5BUJ0ijRfbq00RiXmelYDLt7XbC_K3v0tTgVbQ7N6yWBZIf72uz4sZ1Cioj3lncqVu14sB1Y81ghlKwomnFDlvciUY"/>
+</div>
+</div>
+<div class="mb-10 text-center">
+<h1 class="text-3xl font-bold tracking-tight text-secondary dark:text-white">Welcome Back</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-2 text-sm leading-relaxed">
+                Log in to your corporate account
+            </p>
+</div>
+<form class="space-y-6">
+<div class="space-y-1.5">
+<label class="text-xs font-bold uppercase tracking-wider text-secondary/60 dark:text-slate-400 ml-1" for="email">Work Email</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-4 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 outline-none" id="email" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center px-1">
+<label class="text-xs font-bold uppercase tracking-wider text-secondary/60 dark:text-slate-400" for="password">Password</label>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<input class="block w-full pl-11 pr-12 py-4 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-slate-400 outline-none" id="password" placeholder="••••••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+<div class="flex justify-end mt-2">
+<a class="text-xs font-bold text-primary hover:text-primary/80 transition-colors" href="#">Forgot Password?</a>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-[#CC0000] text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center space-x-2" type="submit">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</form>
+<div class="relative my-10">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-slate-200 dark:border-slate-800"></div>
+</div>
+<div class="relative flex justify-center text-xs uppercase">
+<span class="bg-background-light dark:bg-background-dark px-4 text-slate-400 font-bold">OR</span>
+</div>
+</div>
+<div class="flex flex-col items-center space-y-4">
+<button class="flex flex-col items-center group">
+<div class="w-16 h-16 rounded-full border-2 border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:border-primary transition-all mb-2 bg-white dark:bg-slate-800 shadow-sm">
+<span class="material-symbols-outlined text-3xl">face</span>
+</div>
+<span class="text-xs font-bold text-secondary/60 dark:text-slate-400">Sign in with Face ID</span>
+</button>
+</div>
+<div class="mt-auto pt-8 flex justify-center">
+<p class="text-xs text-slate-500">
+                Having trouble? <a class="text-primary font-bold" href="#">Contact Support</a>
+</p>
+</div>
+</main>
+<div class="ios-bottom-indicator w-full"></div>
+<div class="fixed top-0 right-0 -z-10 opacity-5 pointer-events-none">
+<svg height="400" viewBox="0 0 100 100" width="400">
+<circle cx="80" cy="20" fill="var(--primary-color)" r="45"></circle>
+</svg>
+</div>
+<div class="fixed bottom-0 left-0 -z-10 opacity-5 pointer-events-none">
+<img class="w-full h-full object-cover grayscale opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVUsP2ZaSBGme6goErC89CH0LUCFKIL27nJkt7CN9RtfzQAVmUk7VbbKMF8HoxFRWyOgzzzOMt13crvjXPyJ7zPLhDxpL9QuNsTuWBT179_ZksBZh6Tvri0pIFr_OEyM4QRU7FBJ0Fc1WMu6cmNEVWnfutijWb1kggEdF2oEkbyRX_wlxP7n5-WRvTZkwznRUqRenjvgX9zAZA5_fzpF_2DQ81TPUvBc3Jx51vKBeJc3He8gnJApL2xLeAMeh2eYjOymLUR6Rt7Rk"/>
+</div>
+
+</body></html>

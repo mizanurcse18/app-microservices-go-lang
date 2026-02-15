@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Employee Contact Cards Grid - Opseek</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#ec1313",
+                "background-light": "#f8f6f6",
+                "background-dark": "#221010",
+              },
+              fontFamily: {
+                "display": ["Public Sans", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- iOS Status Bar Spacer -->
+<div class="h-12 w-full bg-background-light/80 dark:bg-background-dark/80 ios-blur sticky top-0 z-50"></div>
+<!-- Top Navigation Bar -->
+<nav class="sticky top-12 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur border-b border-primary/10 px-4 py-3">
+<div class="flex items-center justify-between mb-4">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">Opseek ERP</span>
+<h1 class="text-2xl font-bold text-black dark:text-white">Directory</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-icons text-xl">grid_view</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400">
+<span class="material-icons text-xl">view_list</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-white dark:bg-slate-800/50 border-none rounded-xl py-3 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary transition-all" placeholder="Search by name, role, or team..." type="text"/>
+</div>
+</nav>
+<!-- Main Content Area with Alphabet Sidebar Layout -->
+<main class="flex-1 relative flex">
+<!-- Alphabet Quick-Scroll Sidebar -->
+<div class="fixed right-1 top-48 bottom-24 w-6 flex flex-col items-center justify-between text-[10px] font-bold text-slate-400 z-40 py-2">
+<span>A</span><span class="text-primary">•</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span>
+</div>
+<!-- Grid Container -->
+<div class="flex-1 px-4 pt-6 pb-24 mr-6">
+<div class="grid grid-cols-2 gap-4">
+<!-- Employee Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col">
+<div class="p-4 flex flex-col items-center text-center flex-1">
+<div class="relative mb-3">
+<img class="w-24 h-24 rounded-2xl object-cover border-2 border-background-light dark:border-slate-800 shadow-md" data-alt="Professional corporate headshot of a female executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr6HV2lwvFKlNXC2ukEW9ky-2Km6nwdsNWpFC0i42NNlAuFOhft_vSqfIlMvKtbM_AyEJXd-7SCO2PayzkbEMOjXM4LVmWAGm3tK2IXq3EzlU01to3szqBs10CU62i4hzjBIv6X1J_z1OnSm08kj5AgIIZv-IiRfDMJ8KznAW_-8NP_et43merRC0vEP9ebucPElYewiYciH26Z5w49B_8YS8xRNyShlljGaat1B37QiTeAkZBK3bS8uH5sCR6jpUC2Ad89EaEpD8"/>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-green-500 border-2 border-white dark:border-slate-900 rounded-full"></div>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight">Sarah Jenkins</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Lead Developer</p>
+</div>
+<div class="p-2 pt-0 grid grid-cols-2 gap-2">
+<button class="bg-primary text-white py-2 rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity">
+<span class="material-icons text-sm">call</span>
+</button>
+<button class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 py-2 rounded-lg flex items-center justify-center">
+<span class="material-icons text-sm">mail_outline</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col">
+<div class="p-4 flex flex-col items-center text-center flex-1">
+<div class="relative mb-3">
+<img class="w-24 h-24 rounded-2xl object-cover border-2 border-background-light dark:border-slate-800 shadow-md" data-alt="Professional corporate headshot of a male manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0U3peyFfZTbj5MfvORdhN5Uax-eqaPHXDox13GzOOllEowIRGqs1nmuA-FmiM6WDpbi2gIKvUqinCyI2yl-XWq75iQ2LnNZS1hJGRrsySeY2runAy-5EBHLU4qgjqaZ0yqNnI4jNsgBqWIwZ_FW8R7gHudw0YgW0d_1BUUJQ1Fb-gJkk_bYdZc9omcQc1x10ZP1CWG3NArAuGmBFBViseU6pYLitEYFRAeOvnZrabInBOGrV3KAd6qaLRqCfI5tbjyOcSczmxBb0"/>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-slate-300 border-2 border-white dark:border-slate-900 rounded-full"></div>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight">Marcus Thorne</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Product Designer</p>
+</div>
+<div class="p-2 pt-0 grid grid-cols-2 gap-2">
+<button class="bg-primary text-white py-2 rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity">
+<span class="material-icons text-sm">call</span>
+</button>
+<button class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 py-2 rounded-lg flex items-center justify-center">
+<span class="material-icons text-sm">mail_outline</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col">
+<div class="p-4 flex flex-col items-center text-center flex-1">
+<div class="relative mb-3">
+<img class="w-24 h-24 rounded-2xl object-cover border-2 border-background-light dark:border-slate-800 shadow-md" data-alt="Professional headshot of a woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZIJLJzRoVh0-eQNrZLiqhsG0Nbp5omuYcMeeT_VrjW5hUUoDXxhyZ61X62kaRnJNeB63uhvnLVuHLe0-TeWNAGMb8owDyS7KUgMu4zJC1jtD3OJfX86pUvIc34drYUzC7yjuXJmGOrIzSwFGBtdPjGeHK6c5M6nZ9jSl1EBl_ZNSgkORQQr6ygkP944ET4wAu1TZYmnKiaOGVIZQAptQZswKsDM8-RwiICJEcZgDUaDswIJRufN4csc5jo5DYtuMo5oN60XYMhZA"/>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-green-500 border-2 border-white dark:border-slate-900 rounded-full"></div>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight">Elena Rodriguez</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Project Manager</p>
+</div>
+<div class="p-2 pt-0 grid grid-cols-2 gap-2">
+<button class="bg-primary text-white py-2 rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity">
+<span class="material-icons text-sm">call</span>
+</button>
+<button class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 py-2 rounded-lg flex items-center justify-center">
+<span class="material-icons text-sm">mail_outline</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 4 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col">
+<div class="p-4 flex flex-col items-center text-center flex-1">
+<div class="relative mb-3">
+<img class="w-24 h-24 rounded-2xl object-cover border-2 border-background-light dark:border-slate-800 shadow-md" data-alt="Professional headshot of a man with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJLI6xsSeyYGbSauNBa-w3TjwCPRGNbN17CAJmGge_kdQgSPK0JDF3hu61rJPYP_t-80Av22Yrleo3Sw1UHRCDZg3aV5ZfYMzlSzDi6AJIADmPyQnDyty88h5WZbpuIfSUWTk6rbwW325KaAYlGVZvs_iQIzU6wG8NY_oAOpgB9bBC9p8Tw26TNEKzxr54e_zzK_Bn2nfWmeeevZJg2Oeynk2XhKXCQockqBBylo15AQGq5bkIvtKBOasWZQ5VS9TUlSeDVVg0Q4k"/>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-yellow-500 border-2 border-white dark:border-slate-900 rounded-full"></div>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight">David Chen</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Security Lead</p>
+</div>
+<div class="p-2 pt-0 grid grid-cols-2 gap-2">
+<button class="bg-primary text-white py-2 rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity">
+<span class="material-icons text-sm">call</span>
+</button>
+<button class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 py-2 rounded-lg flex items-center justify-center">
+<span class="material-icons text-sm">mail_outline</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 5 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col">
+<div class="p-4 flex flex-col items-center text-center flex-1">
+<div class="relative mb-3">
+<div class="w-24 h-24 rounded-2xl bg-primary/10 flex items-center justify-center text-primary border-2 border-background-light dark:border-slate-800">
+<span class="text-3xl font-bold">AL</span>
+</div>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-green-500 border-2 border-white dark:border-slate-900 rounded-full"></div>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight">Alex Low</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">HR Operations</p>
+</div>
+<div class="p-2 pt-0 grid grid-cols-2 gap-2">
+<button class="bg-primary text-white py-2 rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity">
+<span class="material-icons text-sm">call</span>
+</button>
+<button class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 py-2 rounded-lg flex items-center justify-center">
+<span class="material-icons text-sm">mail_outline</span>
+</button>
+</div>
+</div>
+<!-- Employee Card 6 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col">
+<div class="p-4 flex flex-col items-center text-center flex-1">
+<div class="relative mb-3">
+<img class="w-24 h-24 rounded-2xl object-cover border-2 border-background-light dark:border-slate-800 shadow-md" data-alt="Professional headshot of a woman looking at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-afimjy324mLI9XfmCdiAGP9XXBCqC7ytB18_jLY2bJwvpV_qEkrwaXFl0MlZ6Lmtsrfuk598r8L87QvzWf6ciwkETX7wQ8QRCHDUsDRiIbM2BuKmu8Ex1QADd5BksJ1abiDkA-uh47I9j1TmYo8dagMnIZ0zPGMCzkWq94MfN9tSFRbMCGu0Eq2qHqeYPJFwUsISSjQ6t6Cfc5Ux3ueH_b4qz0HM3n2Z4uVbRqC_7NEgGHdfjSggUngMpZ5REnXRfFHqpZbSXZM"/>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-slate-300 border-2 border-white dark:border-slate-900 rounded-full"></div>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-white leading-tight">Maya Patel</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Senior QA</p>
+</div>
+<div class="p-2 pt-0 grid grid-cols-2 gap-2">
+<button class="bg-primary text-white py-2 rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity">
+<span class="material-icons text-sm">call</span>
+</button>
+<button class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 py-2 rounded-lg flex items-center justify-center">
+<span class="material-icons text-sm">mail_outline</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Tab Bar (iOS style) -->
+<footer class="fixed bottom-0 left-0 right-0 bg-background-light/95 dark:bg-background-dark/95 ios-blur border-t border-primary/10 pb-8 pt-2 px-6 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">home</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Dashboard</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons">group</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Directory</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<div class="bg-primary p-3 -mt-8 rounded-full shadow-lg shadow-primary/40 flex items-center justify-center text-white">
+<span class="material-icons">add</span>
+</div>
+<span class="text-[10px] font-medium uppercase tracking-tighter mt-1">Quick Add</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">chat_bubble</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Chat</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">settings</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Menu</span>
+</button>
+</footer>
+<!-- iOS Home Indicator -->
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-black/10 dark:bg-white/10 rounded-full z-[60]"></div>
+</body></html>

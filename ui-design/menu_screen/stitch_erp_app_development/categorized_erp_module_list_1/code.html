@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Categorized ERP Module List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#135bec",
+                "background-light": "#f6f6f8",
+                "background-dark": "#101622",
+              },
+              fontFamily: {
+                "display": ["Public Sans"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex justify-center">
+<!-- Mobile Container (iPhone Simulation) -->
+<div class="w-full max-w-[430px] bg-white dark:bg-background-dark min-h-screen relative shadow-2xl flex flex-col overflow-hidden">
+<!-- Status Bar Space (iOS style) -->
+<div class="h-12 w-full flex justify-between items-center px-8 pt-4">
+<span class="text-sm font-semibold">9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-icons-outlined text-base">signal_cellular_alt</span>
+<span class="material-icons-outlined text-base">wifi</span>
+<span class="material-icons-outlined text-base">battery_full</span>
+</div>
+</div>
+<!-- Header -->
+<header class="px-6 pt-6 pb-4">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h1 class="text-2xl font-bold tracking-tight">ERP Modules</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Manage your workspace</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-icons-outlined text-primary">grid_view</span>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative group">
+<span class="material-icons-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl py-3 pl-10 pr-4 focus:ring-2 focus:ring-primary/50 text-sm transition-all outline-none" placeholder="Search modules..." type="text"/>
+</div>
+</header>
+<!-- Module List (Categorized Accordion Style) -->
+<main class="flex-1 overflow-y-auto px-6 pb-24">
+<!-- Category: Operations -->
+<section class="mb-4">
+<div class="flex items-center justify-between py-3 cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-icons-outlined text-primary text-xl">inventory_2</span>
+</div>
+<h2 class="font-semibold text-slate-800 dark:text-slate-100">Operations</h2>
+</div>
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">expand_more</span>
+</div>
+<div class="space-y-1 ml-11">
+<div class="flex items-center justify-between py-2.5 group cursor-pointer border-b border-slate-100 dark:border-slate-800">
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Inventory Tracking</span>
+<div class="px-2 py-0.5 rounded-full bg-orange-100 dark:bg-orange-900/30 text-[10px] font-bold text-orange-600 dark:text-orange-400 uppercase tracking-wider">
+                            Low Stock
+                        </div>
+</div>
+<div class="flex items-center justify-between py-2.5 group cursor-pointer border-b border-slate-100 dark:border-slate-800">
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Order Management</span>
+<div class="px-2 py-0.5 rounded-full bg-primary/10 text-[10px] font-bold text-primary uppercase tracking-wider">
+                            12 New
+                        </div>
+</div>
+<div class="flex items-center justify-between py-2.5 group cursor-pointer">
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Logistics &amp; Fleet</span>
+</div>
+</div>
+</section>
+<!-- Category: Human Resources -->
+<section class="mb-4">
+<div class="flex items-center justify-between py-3 cursor-pointer group border-t border-slate-100 dark:border-slate-800 mt-2 pt-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-icons-outlined text-primary text-xl">groups</span>
+</div>
+<h2 class="font-semibold text-slate-800 dark:text-slate-100">Human Resources</h2>
+</div>
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors rotate-180">expand_more</span>
+</div>
+<div class="space-y-1 ml-11">
+<div class="flex items-center justify-between py-2.5 group cursor-pointer border-b border-slate-100 dark:border-slate-800">
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Employee Directory</span>
+</div>
+<div class="flex items-center justify-between py-2.5 group cursor-pointer border-b border-slate-100 dark:border-slate-800">
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Payroll Processing</span>
+<div class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
+                            Completed
+                        </div>
+</div>
+<div class="flex items-center justify-between py-2.5 group cursor-pointer">
+<span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Leave Management</span>
+<div class="px-2 py-0.5 rounded-full bg-red-100 dark:bg-red-900/30 text-[10px] font-bold text-red-600 dark:text-red-400 uppercase tracking-wider">
+                            3 Pending
+                        </div>
+</div>
+</div>
+</section>
+<!-- Category: Finance -->
+<section class="mb-4">
+<div class="flex items-center justify-between py-3 cursor-pointer group border-t border-slate-100 dark:border-slate-800 mt-2 pt-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-icons-outlined text-primary text-xl">account_balance_wallet</span>
+</div>
+<h2 class="font-semibold text-slate-800 dark:text-slate-100">Finance</h2>
+</div>
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">expand_more</span>
+</div>
+<!-- This one starts collapsed in view for visual variety -->
+<div class="hidden ml-11">
+<div class="py-2.5 text-sm text-slate-500">Expanding...</div>
+</div>
+</section>
+<!-- Category: Sales & CRM -->
+<section class="mb-4">
+<div class="flex items-center justify-between py-3 cursor-pointer group border-t border-slate-100 dark:border-slate-800 mt-2 pt-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-icons-outlined text-primary text-xl">insights</span>
+</div>
+<h2 class="font-semibold text-slate-800 dark:text-slate-100">Sales &amp; CRM</h2>
+</div>
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">expand_more</span>
+</div>
+</section>
+<!-- Category: Administration -->
+<section class="mb-4">
+<div class="flex items-center justify-between py-3 cursor-pointer group border-t border-slate-100 dark:border-slate-800 mt-2 pt-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-icons-outlined text-primary text-xl">settings</span>
+</div>
+<h2 class="font-semibold text-slate-800 dark:text-slate-100">Administration</h2>
+</div>
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">expand_more</span>
+</div>
+</section>
+<!-- Quick Action Card -->
+<div class="mt-8 p-5 bg-gradient-to-br from-primary to-blue-700 rounded-2xl text-white relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-bold text-lg mb-1">Weekly Report</h3>
+<p class="text-white/80 text-sm mb-4">Your business analytics are ready for review.</p>
+<button class="bg-white text-primary px-4 py-2 rounded-lg text-sm font-bold shadow-lg shadow-black/10">View Report</button>
+</div>
+<!-- Abstract Design Background -->
+<div class="absolute -right-10 -bottom-10 opacity-20">
+<img class="w-40 h-40 rounded-full" data-alt="Abstract geometric circles pattern for background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvqfO_-TA1Z_N9cQw31M7aO3CD8c0jgthhNjuvytLb4kHnzDH_f8AadyNwVSqwt9cYjOxrXBZWOHaLKUZP2BejwZGHs9BKldBXPrF3CMA80UYHYnOkSIE8LWYu9rZnc15OUzkSlOOTPGkVgFxmB2XHCiGoJek6CzpVzRHQYVeQz7G2P364in1-u-71WTzvjDl2BBXyBNva_YrVc1_ei0Okgpwaat8hxE5JgcK77bJc5fUiczC7A2enKu9Gio1LVkttBfYIHhH61IU"/>
+</div>
+</div>
+</main>
+<!-- Bottom Tab Bar (iOS style) -->
+<nav class="absolute bottom-0 left-0 right-0 h-20 bg-white/80 dark:bg-background-dark/80 ios-blur border-t border-slate-200 dark:border-slate-800 flex items-center justify-around px-4 pb-4">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Modules</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400 relative">
+<span class="material-icons-outlined">notifications</span>
+<span class="text-[10px] font-medium">Alerts</span>
+<div class="absolute top-0 right-1 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></div>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</div>
+</nav>
+<!-- Home Indicator (iOS style) -->
+<div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full"></div>
+</div>
+</body></html>

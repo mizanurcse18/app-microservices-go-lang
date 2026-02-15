@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forgot Password - Opseek ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E11D48", // Opseek Signature Red
+                        "background-light": "#ffffff",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-red: #E11D48;
+        }
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-50 dark:bg-background-dark text-black dark:text-slate-100 min-h-screen flex justify-center items-center">
+<div class="relative w-full max-w-[390px] h-[844px] bg-white dark:bg-slate-900 overflow-hidden rounded-[3rem] border-[8px] border-black dark:border-slate-800 shadow-2xl flex flex-col">
+<div class="h-11 w-full px-8 flex justify-between items-end pb-2">
+<span class="text-xs font-bold text-black dark:text-white">9:41</span>
+<div class="flex gap-1 items-center text-black dark:text-white">
+<span class="material-icons text-[14px]">signal_cellular_alt</span>
+<span class="material-icons text-[14px]">wifi</span>
+<span class="material-icons text-[18px]">battery_full</span>
+</div>
+</div>
+<header class="px-4 py-2 flex items-center">
+<button class="p-2 -ml-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-icons text-primary text-2xl">chevron_left</span>
+</button>
+<span class="ml-1 text-primary font-semibold text-sm">Back to Login</span>
+</header>
+<main class="flex-1 px-8 pt-10 flex flex-col items-center no-scrollbar overflow-y-auto">
+<div class="relative w-32 h-32 mb-10">
+<div class="absolute inset-0 bg-primary/10 dark:bg-primary/20 rounded-full"></div>
+<div class="absolute inset-4 bg-primary/20 dark:bg-primary/30 rounded-full"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-lg ios-shadow">
+<span class="material-icons text-white text-4xl">lock_reset</span>
+</div>
+</div>
+</div>
+<div class="text-center space-y-3 mb-10">
+<h1 class="text-2xl font-black tracking-tight text-black dark:text-white">Forgot Password?</h1>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed px-2">
+                Enter the email address associated with your account. We'll send you a link to reset your password.
+            </p>
+</div>
+<form class="w-full space-y-6">
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-[0.1em] text-black/50 dark:text-slate-500 ml-1" for="email">
+                    Email Address
+                </label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-icons text-black/40 group-focus-within:text-primary transition-colors text-xl">mail_outline</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm font-medium text-black placeholder:text-slate-400 dark:placeholder:text-slate-600" id="email" placeholder="name@opseek.com" type="email"/>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-red-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="button">
+<span>Send Recovery Link</span>
+<span class="material-icons text-lg">arrow_forward</span>
+</button>
+</form>
+<div class="mt-auto pb-12 w-full flex flex-col items-center gap-6">
+<div class="flex items-center gap-4 w-full">
+<div class="h-[1px] flex-1 bg-slate-100 dark:bg-slate-800"></div>
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Or</span>
+<div class="h-[1px] flex-1 bg-slate-100 dark:bg-slate-800"></div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<a class="text-black dark:text-slate-300 text-sm font-bold hover:text-primary transition-colors" href="#">
+                    Try another way
+                </a>
+<p class="text-xs text-slate-500 dark:text-slate-400">
+                    Need help? <a class="text-primary font-bold decoration-2 hover:underline" href="#">Contact Support</a>
+</p>
+</div>
+</div>
+</main>
+<div class="h-8 w-full flex justify-center items-center">
+<div class="w-32 h-1 bg-black/10 dark:bg-slate-200/20 rounded-full"></div>
+</div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+</div>
+
+</body></html>

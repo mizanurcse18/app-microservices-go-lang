@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Opseek Splash Screen</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-white dark:bg-background-dark font-display antialiased">
+<!-- Mobile Screen Wrapper (iOS Aspect Ratio simulation) -->
+<div class="flex items-center justify-center min-h-screen p-4">
+<div class="relative w-full max-w-[390px] h-[844px] bg-white dark:bg-background-dark shadow-2xl rounded-[3rem] overflow-hidden border-[8px] border-neutral-900 dark:border-neutral-800 flex flex-col items-center justify-between py-20">
+<!-- Top Status Bar Area (Mock) -->
+<div class="absolute top-0 w-full h-11 flex justify-between items-center px-8">
+<div class="text-sm font-semibold text-black dark:text-white">9:41</div>
+<div class="flex gap-1 items-center">
+<span class="material-icons text-sm text-black dark:text-white">signal_cellular_alt</span>
+<span class="material-icons text-sm text-black dark:text-white">wifi</span>
+<span class="material-icons text-sm text-black dark:text-white">battery_full</span>
+</div>
+</div>
+<!-- Central Content Area -->
+<div class="flex-1 flex flex-col items-center justify-center space-y-12">
+<!-- Logo Container -->
+<div class="flex flex-col items-center">
+<div class="w-24 h-24 mb-6 flex items-center justify-center rounded-xl bg-primary shadow-lg shadow-primary/20">
+<span class="material-icons text-white text-6xl">insights</span>
+</div>
+<h1 class="text-5xl font-bold tracking-tighter text-black dark:text-white">
+                        opseek<span class="text-primary">.</span>
+</h1>
+</div>
+<!-- Loading Indicator -->
+<div class="flex flex-col items-center space-y-4">
+<div class="relative flex items-center justify-center">
+<!-- Outer track -->
+<div class="w-10 h-10 rounded-full border-4 border-primary/10"></div>
+<!-- Spinner part -->
+<div class="absolute w-10 h-10 rounded-full border-4 border-t-primary border-r-transparent border-b-transparent border-l-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Bottom Brand Message -->
+<div class="pb-8 flex flex-col items-center space-y-6">
+<p class="text-neutral-500 dark:text-neutral-400 font-medium tracking-wide uppercase text-xs">
+                    Your Business, Simplified
+                </p>
+<!-- iOS Home Indicator -->
+<div class="w-32 h-1.5 bg-neutral-900 dark:bg-neutral-100 rounded-full opacity-20"></div>
+</div>
+<!-- Decoration Element -->
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+</div>
+</body></html>

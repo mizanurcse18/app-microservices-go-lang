@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tasks Management Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- iOS Status Bar Placeholder -->
+<div class="h-12 w-full bg-background-light/80 dark:bg-background-dark/80 sticky top-0 z-50 ios-blur flex items-center justify-between px-6">
+<span class="text-sm font-semibold">9:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="material-icons text-sm">signal_cellular_alt</span>
+<span class="material-icons text-sm">wifi</span>
+<span class="material-icons text-sm">battery_full</span>
+</div>
+</div>
+<!-- Header & Navigation -->
+<header class="px-5 pt-2 pb-4">
+<div class="flex justify-between items-center mb-4">
+<h1 class="text-3xl font-bold tracking-tight">Tasks</h1>
+<div class="flex items-center space-x-3">
+<button class="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-icons text-xl">notifications_none</span>
+</button>
+<img alt="Profile" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-800 shadow-sm" data-alt="Close up professional portrait of a woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsHQHduWVU6aEbPYuAwe_udx77TLZYqI1egCe5jE9-a9hCFG5B0J2fW1mdsvsM_yrb_JZRuyJVyejRjqYezQoZptFLFJ5gIY1cv671mdJveNj886o81K9H7QAqHALvrmxNZP3jH3EqsfWSBCFPBHnZn4bImU9NLeCpABe_OLeQAA6LbVsfFBhY-m0ylV2n7hSpV2b6Hcdi1VuKD0-0oL26EQ4bRFT3bYZQaLC6IPaJPChU-N_Sd9f3ceASdyF7bqMSSf69dVlIa94"/>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative mb-6">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-800 border-none rounded-xl shadow-sm focus:ring-2 focus:ring-primary/50 text-sm transition-all" placeholder="Search tasks, projects..." type="text"/>
+</div>
+<!-- Filter Chips -->
+<div class="flex space-x-2 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-5 py-2 bg-primary text-white rounded-full text-sm font-medium whitespace-nowrap">All Tasks</button>
+<button class="px-5 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap border border-slate-200 dark:border-slate-700">In Progress</button>
+<button class="px-5 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap border border-slate-200 dark:border-slate-700">Priority</button>
+<button class="px-5 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap border border-slate-200 dark:border-slate-700">Completed</button>
+</div>
+</header>
+<!-- Task List Content -->
+<main class="px-5 space-y-4 pb-32">
+<!-- Section Heading -->
+<div class="flex justify-between items-center pt-2">
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-400">Due Soon</h2>
+<button class="text-xs font-semibold text-primary">View Calendar</button>
+</div>
+<!-- Task Card 1: Overdue -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border-l-4 border-red-500">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-red-500"></span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-red-500">High Priority</span>
+</div>
+<span class="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded text-[10px] font-bold uppercase">Overdue</span>
+</div>
+<h3 class="text-base font-semibold mb-1">Q4 Financial Audit Review</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-1">Review all ledger entries for the final quarter...</p>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<img class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800" data-alt="Small avatar of a smiling team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmk4bb9XBmkUG7kYXKDXX_Hzt3_sd6LY3LIQVPFPXYEPlKW9IcHYZ0uQfaLKHbHihtn_3XBBE1Bcn0vPcTSYoQO2b5xG-9ecovYw64d2khijSPK8bJMmgWdwnAi2ZiY8sJ2ux596f8kgOxUeSNn8xNkC-1mCS0rwazp-VxYYrHTgAHkJ2r2mkOrRZ78dMi_eNY1d9ByaZw1X_qn5-Zlwjw7b2mHP70i1xMao3GF3sxMgRAKsr0yBTOzWPzHA-iAooLwMCdtGgHIH8"/>
+<img class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800" data-alt="Small avatar of a male team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO_pmPUQRUy13Q9a2fV2OeE7iXe9-Lk6Xmzu-P20PcGeaIVKKfGIS3JdNWDXgMUFSRBQzdGYv4yyXZQK-7tli0dXxXc1ptmbzx-SVt82MY-bpffnCOtIPR0jwBuowRdYijYx2lO4Ppnt76u8f-Ut8XQGWnjIL2qGd0WTPwgstjCk8czvSUFw4p105GNhBcqTkw5gU80rV3rArPzKBw8s-gk86vkmo90aW5Vte1GVUlYR9ZMpmIgOKWsGzkrVjCgO9-vef8Xx6M0YE"/>
+</div>
+<div class="flex items-center text-slate-400 text-xs">
+<span class="material-icons text-sm mr-1 text-red-400">calendar_today</span>
+<span class="text-red-400 font-medium">Oct 12, 2023</span>
+</div>
+</div>
+</div>
+<!-- Task Card 2: In Progress -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border-l-4 border-primary">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-amber-500">Medium Priority</span>
+</div>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded text-[10px] font-bold uppercase">In Progress</span>
+</div>
+<h3 class="text-base font-semibold mb-1">Approve Purchase Orders</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-1">Pending approval for hardware procurement...</p>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<img class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800" data-alt="Small avatar of a bearded man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzuSxIPWMcS-OgS8h5luNio-ZM5Z2G-kJeJqYYd3lE5HaghbUGfo0MqtPpk0hMBJXrgua9miby0YVr3mmq1l7uaiKFciVXM2XXLorj9hM_6aDkXN-kOFyU_aRpvHh6nSxVTlZznPlt0Tv7cQ4sf6R2z3GXFs2fcLM9e55OIAz-c3481qHizA5iMWgu89QHLLE1DG9d7xLANct5Xe1VEPo8INVeQl1YgrY8jcTSxQxHNVkMc32FjI_yarA7sVZXHbcdws9RwlKEmBY"/>
+</div>
+<div class="flex items-center text-slate-400 text-xs">
+<span class="material-icons text-sm mr-1">calendar_today</span>
+<span>Oct 20, 2023</span>
+</div>
+</div>
+</div>
+<!-- Section Heading -->
+<div class="flex justify-between items-center pt-4">
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-400">Completed</h2>
+</div>
+<!-- Task Card 3: Completed -->
+<div class="bg-white/60 dark:bg-slate-800/60 p-4 rounded-xl shadow-sm opacity-80">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-slate-300"></span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-slate-400">Low Priority</span>
+</div>
+<span class="px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded text-[10px] font-bold uppercase">Completed</span>
+</div>
+<h3 class="text-base font-semibold mb-1 text-slate-500 line-through">New Client Onboarding</h3>
+<div class="flex items-center justify-between">
+<div class="flex items-center text-slate-400 text-xs">
+<span class="material-icons text-sm mr-1">check_circle</span>
+<span>Finished 2 days ago</span>
+</div>
+</div>
+</div>
+<!-- Task Card 4: In Progress -->
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border-l-4 border-primary">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-primary">Critical</span>
+</div>
+<span class="px-2 py-1 bg-primary/10 text-primary rounded text-[10px] font-bold uppercase">In Progress</span>
+</div>
+<h3 class="text-base font-semibold mb-1">Server Migration Plan</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-1">Database migration strategy for cloud transition...</p>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-[10px] font-bold border-2 border-white dark:border-slate-800">+3</div>
+</div>
+<div class="flex items-center text-slate-400 text-xs">
+<span class="material-icons text-sm mr-1">calendar_today</span>
+<span>Oct 25, 2023</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-10 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center active:scale-95 transition-transform z-40">
+<span class="material-icons text-3xl">add</span>
+</button>
+<!-- Tab Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 ios-blur border-t border-slate-200 dark:border-slate-800 px-6 py-3 safe-bottom z-50">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<button class="flex flex-col items-center space-y-1 text-slate-400">
+<span class="material-icons">dashboard</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-primary">
+<span class="material-icons">assignment</span>
+<span class="text-[10px] font-medium">Tasks</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-slate-400">
+<span class="material-icons">insights</span>
+<span class="text-[10px] font-medium">Reports</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-slate-400">
+<span class="material-icons">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</div>
+</nav>
+</body></html>
