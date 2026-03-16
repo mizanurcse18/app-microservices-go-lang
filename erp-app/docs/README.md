@@ -9,6 +9,7 @@ This folder contains all project documentation for the Stitch ERP Flutter applic
 
 ### Setup & Installation
 - **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** - Step-by-step guide for installing Flutter SDK and Android Studio
+- **[RUN_GUIDE.md](./RUN_GUIDE.md)** - Explanation of how to build, run, and troubleshoot the Flutter application
 
 ### Development
 - Coming soon: API documentation, component library, coding standards
